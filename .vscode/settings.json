@@ -1,29 +1,29 @@
 {
-    "editor.detectIndentation": true,
-    "editor.guides.indentation": false,
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
-    "editor.formatOnSaveMode": "modifications",
-    "editor.indentSize": "tabSize",
-    "editor.tabSize": 2,
-    "prettier.useTabs": false,
-    "xml.format.splitAttributes": false,
-    "xml.format.spaceBeforeEmptyCloseTag": false,
-    "xml.format.preserveAttributeLineBreaks": true,
-    "xml.format.preservedNewlines": 1,
-    "[xml]": {
-        "editor.autoClosingBrackets": "never",
-        "editor.trimAutoWhitespace": false,
-        "files.trimFinalNewlines": false,
-    },
-    "xml.format.preserveSpace": [
-        "key",
-        "dict",
-        "true",
-        "false",
-        "plist",
-        "array",
-        "string"
-    ],
-    "xml.completion.autoCloseRemovesContent": false,
+  "editor.detectIndentation": true,
+  "editor.guides.indentation": false,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modifications",
+  "editor.indentSize": "tabSize",
+  "editor.tabSize": 2,
+  "prettier.useTabs": false,
+  "xml.format.splitAttributes": false,
+  "xml.format.spaceBeforeEmptyCloseTag": false,
+  "xml.format.preserveAttributeLineBreaks": true,
+  "xml.format.preservedNewlines": 1,
+  "[xml]": {
+    "editor.autoClosingBrackets": "never",
+    "editor.trimAutoWhitespace": false,
+    "files.trimFinalNewlines": false
+  },
+  "xml.format.preserveSpace": [
+    "key",
+    "dict",
+    "true",
+    "false",
+    "plist",
+    "array",
+    "string"
+  ],
+  "xml.completion.autoCloseRemovesContent": false
 }
