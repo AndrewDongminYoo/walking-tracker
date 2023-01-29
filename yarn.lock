@@ -5672,6 +5672,13 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
+react-native-accurate-step-counter@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-accurate-step-counter/-/react-native-accurate-step-counter-2.0.4.tgz#6d9252bf6fc39cd8727e5f08db87f80696ffd633"
+  integrity sha512-DHYboQ15QwKw2JUAwDgLG2aEvwYEewaUVL9sWXW4g6O74BtZ+3zKG7FaeBbl9hAfm3yHfD6Vwce+G3/ShSj7Ug==
+  dependencies:
+    react-native-shake "^4.0.2"
+
 react-native-codegen@^0.71.3:
   version "0.71.3"
   resolved "https://registry.yarnpkg.com/react-native-codegen/-/react-native-codegen-0.71.3.tgz#75fbc591819050791319ebdb9fe341ee4df5c288"
@@ -5686,6 +5693,21 @@ react-native-gradle-plugin@^0.71.13:
   version "0.71.13"
   resolved "https://registry.yarnpkg.com/react-native-gradle-plugin/-/react-native-gradle-plugin-0.71.13.tgz#6f60ff24ac712554903dfc0ae98475cb280c57a6"
   integrity sha512-C66LNZAXbU0YDRkWx8d/8kjesdu7fsUAc/3QPJNftSXKEvEtnFZK2aH/rIgu1s5dbTcE0fjhdVPNJMRIfKo61w==
+
+react-native-permissions@^3.6.1:
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/react-native-permissions/-/react-native-permissions-3.6.1.tgz#73adcc1cef8cd57a9ef167b4507405f4ff5749c4"
+  integrity sha512-fzPpPQXeD34inUccqtoResSwYubfrwUguP4qrVUUv8+KSMjYSaHGoS5HaIJLZHlN9gO+TvLJZ2L5ZljTsb6qnQ==
+
+react-native-shake@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-shake/-/react-native-shake-4.0.2.tgz#6ea91049a87709c0917d79d3478f60089dfeb86f"
+  integrity sha512-2niPeI2d5blkbtOwHZ9aoPEue5Uas2IViZKc3jMJ7NIycSQKBw/gRhEYl4mNagCOF6zD6b30lQRBEqhCZvkAoA==
+
+react-native-shake@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-shake/-/react-native-shake-5.1.1.tgz#733657764b0395b26f26576bba51e2dcbcecfe89"
+  integrity sha512-h6O8LnFd3LkvoYx7O0afM6rO9fDKomZ1EyomGgKRDyFhinxYIU7Z4uPYtwA4Z1Cd3frEEKTLNKHI1Eu0MOI3Yw==
 
 react-native@0.71.1:
   version "0.71.1"

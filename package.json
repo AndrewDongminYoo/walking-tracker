@@ -7,11 +7,19 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "bundle:android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets//main.jsbundle --assets-dest android/app/src/main/res/",
+    "bundle:ios": "react-native bundle --platform ios --dev false --entry-file index.js --bundle-output ios/walking_tracker//main.jsbundle --assets-dest ios/walking_tracker/Images.xcassets/",
+    "postinstall": "(npx patch-package; npx pod-install)",
+    "doctor": "react-native doctor --fix",
+    "clear": "react-native clean --include watchman,yarn,metro,android"
   },
   "dependencies": {
     "react": "18.2.0",
-    "react-native": "0.71.1"
+    "react-native": "0.71.1",
+    "react-native-accurate-step-counter": "^2.0.4",
+    "react-native-permissions": "^3.6.1",
+    "react-native-shake": "^5.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
