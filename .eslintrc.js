@@ -1,4 +1,23 @@
+/** @type {import('eslint').ESLint.Options} */
 module.exports = {
   root: true,
-  extends: '@react-native-community',
+  extends: [
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    '@react-native-community',
+    'prettier',
+  ],
+  rules: {
+    'prettier/prettier': [
+      'error',
+      {
+        singleQuote: true,
+        bracketSameLine: true,
+        bracketSpacing: true,
+        tabWidth: 2,
+        useTabs: false,
+      },
+    ],
+    'react-hooks/exhaustive-deps': 'off',
+  },
 };
