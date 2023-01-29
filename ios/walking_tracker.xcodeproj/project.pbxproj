@@ -43,6 +43,7 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-walking_tracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-walking_tracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = walking_tracker/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-walking_tracker-walking_trackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-walking_tracker-walking_trackerTests.release.xcconfig"; path = "Target Support Files/Pods-walking_tracker-walking_trackerTests/Pods-walking_tracker-walking_trackerTests.release.xcconfig"; sourceTree = "<group>"; };
+		B2831D6C2986BF80001D1BEE /* walking_tracker.profdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = walking_tracker.profdata; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -122,6 +123,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				B2831D6B2986BF80001D1BEE /* OptimizationProfiles */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -135,6 +137,14 @@
 				00E356EE1AD99517003FC87E /* walking_trackerTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B2831D6B2986BF80001D1BEE /* OptimizationProfiles */ = {
+			isa = PBXGroup;
+			children = (
+				B2831D6C2986BF80001D1BEE /* walking_tracker.profdata */,
+			);
+			path = OptimizationProfiles;
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -454,7 +464,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gbike.pedometer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -485,7 +495,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gbike.pedometer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -532,6 +542,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 393JTTV68D;
 				INFOPLIST_FILE = walking_tracker/Info.plist;
