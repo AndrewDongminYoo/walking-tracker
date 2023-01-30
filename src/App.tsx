@@ -41,6 +41,7 @@ const App = () => {
     }
     return () => {
       loggingStop();
+      RNShake.removeAllListeners();
     };
   }, [allowed]);
 

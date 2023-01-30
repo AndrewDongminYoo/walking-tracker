@@ -18,6 +18,6 @@ module.exports = {
         useTabs: false,
       },
     ],
-    'react-hooks/exhaustive-deps': 'off',
+    'react-hooks/exhaustive-deps': 'warn',
   },
 };
