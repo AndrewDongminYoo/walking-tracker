@@ -7,6 +7,7 @@
   "editor.indentSize": "tabSize",
   "editor.tabSize": 2,
   "prettier.useTabs": false,
+  "xml.completion.autoCloseRemovesContent": false,
   "xml.format.splitAttributes": false,
   "xml.format.spaceBeforeEmptyCloseTag": false,
   "xml.format.preserveAttributeLineBreaks": true,
@@ -24,6 +25,5 @@
     "plist",
     "array",
     "string"
-  ],
-  "xml.completion.autoCloseRemovesContent": false
+  ]
 }
