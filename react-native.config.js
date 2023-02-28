@@ -7,7 +7,7 @@ module.exports = {
     android: {
       sourceDir: './android',
       appName: 'app',
-      packageName: 'com.pedometer.walking_tracker',
+      packageName: 'com.walking_tracker',
     },
   },
 };
