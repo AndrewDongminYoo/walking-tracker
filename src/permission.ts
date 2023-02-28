@@ -1,48 +1,29 @@
 import {
-  check,
-  openSettings,
   Permission,
   PERMISSIONS,
-  requestMultiple,
+  request,
   RESULTS,
 } from 'react-native-permissions';
+import { Platform, Rationale } from 'react-native';
 
-export const askFor = async () => {
-  await requestMultiple([
-    PERMISSIONS.ANDROID.BODY_SENSORS,
-    PERMISSIONS.ANDROID.BODY_SENSORS_BACKGROUND,
-    PERMISSIONS.IOS.MOTION,
-  ]);
-};
-
-export const checkPermission = async (permission: Permission) => {
-  return check(permission)
-    .then(result => {
-      switch (result) {
-        case RESULTS.UNAVAILABLE:
-          console.log(
-            'This feature is not available (on this device / in this context)',
-          );
-          return false;
-        case RESULTS.DENIED:
-          console.log(
-            'The permission has not been requested / is denied but request-able',
-          );
-          return false;
-        case RESULTS.LIMITED:
-          console.log('The permission is limited: some actions are possible');
-          return true;
-        case RESULTS.GRANTED:
-          console.log('The permission is granted');
-          return true;
-        case RESULTS.BLOCKED:
-          console.log('The permission is denied and not request-able anymore');
-          return false;
-      }
-    })
-    .catch(error => {
-      console.error(error);
-      openSettings().catch(() => console.warn('cannot open settings'));
+export const requestPermission = async () => {
+  const permission: Permission =
+    Platform.OS === 'ios'
+      ? PERMISSIONS.IOS.MOTION
+      : PERMISSIONS.ANDROID.ACTIVITY_RECOGNITION;
+  const rationale: Rationale = {
+    title: 'Title',
+    message: 'Message',
+    buttonPositive: 'OK',
+    buttonNegative: 'Cancel',
+  };
+  return request(permission, rationale).then(result => {
+    if (result === RESULTS.GRANTED) {
+      console.log('The permission is granted');
+      return true;
+    } else {
+      console.log('The permission is denied');
       return false;
-    });
+    }
+  });
 };
