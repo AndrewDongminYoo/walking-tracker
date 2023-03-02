@@ -17,7 +17,7 @@
     "clear": "react-native clean --include watchman,yarn,metro,android"
   },
   "dependencies": {
-    "@andrewdongminyoo/react-native-step-counter": "*",
+    "@dongminyu/react-native-step-counter": "*",
     "react": "18.2.0",
     "react-native": "0.71.1",
     "react-native-permissions": "^3.6.1"

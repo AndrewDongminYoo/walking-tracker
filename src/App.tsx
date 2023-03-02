@@ -5,7 +5,7 @@ import {
   parseStepData,
   startStepCounterUpdate,
   stopStepCounterUpdate,
-} from '@andrewdongminyoo/react-native-step-counter';
+} from '@dongminyu/react-native-step-counter';
 import { requestPermission } from './permission';
 
 export default function App() {
