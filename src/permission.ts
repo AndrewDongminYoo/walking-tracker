@@ -12,17 +12,17 @@ export const requestPermission = async () => {
       ? PERMISSIONS.IOS.MOTION
       : PERMISSIONS.ANDROID.ACTIVITY_RECOGNITION;
   const rationale: Rationale = {
-    title: 'Title',
-    message: 'Message',
-    buttonPositive: 'OK',
-    buttonNegative: 'Cancel',
+    title: '"Step Counter" Permission',
+    message: '"Step Counter" needs access to your sensor data.',
+    buttonPositive: 'ACCEPT',
+    buttonNegative: 'DENY',
   };
   return request(permission, rationale).then(result => {
     if (result === RESULTS.GRANTED) {
-      console.log('The permission is granted');
+      console.debug('The permission is granted');
       return true;
     } else {
-      console.log('The permission is denied');
+      console.debug('The permission is denied');
       return false;
     }
   });

@@ -25,5 +25,6 @@
     "plist",
     "array",
     "string"
-  ]
+  ],
+  "conventionalCommits.scopes": ["android", "ios", "react-bridge"]
 }

@@ -11,7 +11,12 @@ import { requestPermission } from './permission';
 export default function App() {
   const [supported, setSupported] = useState(false);
   const [granted, setGranted] = useState(false);
-  const [steps, setSteps] = useState(0);
+  const [additionalInfo, setAdditionalInfo] = useState({
+    dailyGoal: '0/10000 steps',
+    stepsString: '0.0kCal',
+    calories: '0 steps',
+    distance: '0.0m',
+  });
 
   /** get user's motion permission and check pedometer is available */
   async function askPermission() {
@@ -23,16 +28,20 @@ export default function App() {
   }
 
   async function startStepCounter() {
-    const now = new Date();
-    startStepCounterUpdate(now, data => {
-      console.debug('🚀 - startStepCounterUpdate', data);
-      console.log(parseStepData(data));
-      setSteps(data.steps);
+    startStepCounterUpdate(new Date(), data => {
+      setAdditionalInfo({
+        ...parseStepData(data),
+      });
     });
   }
 
   function stopStepCounter() {
-    setSteps(0);
+    setAdditionalInfo({
+      dailyGoal: '0/10000 steps',
+      stepsString: '0.0kCal',
+      calories: '0 steps',
+      distance: '0.0m',
+    });
     stopStepCounterUpdate();
   }
 
@@ -80,9 +89,20 @@ export default function App() {
           </>
         ) : (
           <>
-            <Text style={styles.normText}>걸음 수: {steps}</Text>
+            <Text style={styles.normText}>
+              dailyGoal : {additionalInfo.dailyGoal}
+            </Text>
+            <Text style={styles.normText}>
+              calories : {additionalInfo.calories}
+            </Text>
+            <Text style={styles.normText}>
+              stepsString : {additionalInfo.stepsString}
+            </Text>
+            <Text style={styles.normText}>
+              distance : {additionalInfo.distance}
+            </Text>
             <Button
-              title="Start StepCounter Updates"
+              title="Start StepCounter Update"
               onPress={startStepCounter}
             />
             <Button
