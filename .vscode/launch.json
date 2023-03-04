@@ -1,0 +1,43 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "[packager] Debug Android",
+      "cwd": "${workspaceFolder}",
+      "type": "reactnative",
+      "request": "launch",
+      "platform": "android"
+    },
+    {
+      "name": "[packager] Debug iOS",
+      "cwd": "${workspaceFolder}",
+      "type": "reactnative",
+      "request": "launch",
+      "platform": "ios"
+    },
+    {
+      "name": "[react-native] Debug iOS",
+      "request": "launch",
+      "type": "node-terminal",
+      "command": "yarn ios",
+      "sourceMaps": true
+    },
+    {
+      "name": "[react-native] Debug Android",
+      "request": "launch",
+      "type": "node-terminal",
+      "command": "yarn android",
+      "sourceMaps": true
+    },
+    {
+      "name": "[react-native] Debug Windows",
+      "request": "launch",
+      "type": "node-terminal",
+      "command": "yarn windows",
+      "sourceMaps": true
+    }
+  ]
+}
