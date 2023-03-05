@@ -73,9 +73,9 @@ PODS:
     - FlipperKit/FlipperKitNetworkPlugin
   - fmt (6.2.1)
   - glog (0.3.5)
-  - hermes-engine (0.71.1):
-    - hermes-engine/Pre-built (= 0.71.1)
-  - hermes-engine/Pre-built (0.71.1)
+  - hermes-engine (0.71.3):
+    - hermes-engine/Pre-built (= 0.71.3)
+  - hermes-engine/Pre-built (0.71.3)
   - libevent (2.1.12)
   - OpenSSL-Universal (1.1.1100)
   - Permission-Motion (3.7.3):
@@ -419,7 +419,7 @@ PODS:
     - React-perflogger (= 0.71.3)
   - RNPermissions (3.7.3):
     - React-Core
-  - RNStepCounter (0.1.4):
+  - RNStepCounter (0.1.5):
     - React-Core
   - SocketRocket (0.6.0)
   - Yoga (1.14.0)
@@ -604,7 +604,7 @@ SPEC CHECKSUMS:
   FlipperKit: cbdee19bdd4e7f05472a66ce290f1b729ba3cb86
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
-  hermes-engine: 922ccd744f50d9bfde09e9677bf0f3b562ea5fb9
+  hermes-engine: 38bfe887e456b33b697187570a08de33969f5db7
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
   Permission-Motion: d7df389b2a577cdaac9666c3724afef96979c3f8
@@ -637,11 +637,11 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: 7bf0dafc7b727d93c8cb94eb00a9d3753c446c3e
   ReactCommon: 6f65ea5b7d84deb9e386f670dd11ce499ded7b40
   RNPermissions: 314155ed6ce65237e7bd9fb6239219cce83228d3
-  RNStepCounter: 4c5f0d7ab955d582e21db33b0b621d4f950dfb32
+  RNStepCounter: 2c34cbae9e04db671034942672203a69c7e562a9
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   Yoga: 5ed1699acbba8863755998a4245daa200ff3817b
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
 PODFILE CHECKSUM: a90328c25f740cf9c77343e315a3dfbf220e520f
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.0

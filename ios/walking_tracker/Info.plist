@@ -6,57 +6,57 @@
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
 	<string>walking_tracker</string>
-		<key>CFBundleExecutable</key>
-		<string>$(EXECUTABLE_NAME)</string>
-		<key>CFBundleIdentifier</key>
-		<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-		<key>CFBundleInfoDictionaryVersion</key>
-		<string>6.0</string>
-		<key>CFBundleName</key>
-		<string>$(PRODUCT_NAME)</string>
-		<key>CFBundlePackageType</key>
-		<string>APPL</string>
-		<key>CFBundleShortVersionString</key>
-		<string>$(MARKETING_VERSION)</string>
-		<key>CFBundleSignature</key>
-		<string>????</string>
-		<key>CFBundleVersion</key>
-		<string>$(CURRENT_PROJECT_VERSION)</string>
-		<key>LSRequiresIPhoneOS</key>
-		<true/>
-		<key>NSAppTransportSecurity</key>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
 		<dict>
-			<key>NSExceptionDomains</key>
+			<key>localhost</key>
 			<dict>
-				<key>localhost</key>
-				<dict>
-					<key>NSExceptionAllowsInsecureHTTPLoads</key>
-					<true/>
-				</dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
 			</dict>
 		</dict>
-		<key>NSLocationWhenInUseUsageDescription</key>
-		<string>We do not disclose your location information to others.</string>
-		<key>NSMotionUsageDescription</key>
-		<string>We ask for motion only to measure the number of steps.</string>
-		<key>UILaunchStoryboardName</key>
-		<string>LaunchScreen.storyboard</string>
-		<key>UIRequiredDeviceCapabilities</key>
-		<array>
-			<string>armv7</string>
-		</array>
-		<key>UISupportedInterfaceOrientations</key>
-		<array>
-			<string>UIInterfaceOrientationPortrait</string>
-			<string>UIInterfaceOrientationLandscapeLeft</string>
-			<string>UIInterfaceOrientationLandscapeRight</string>
-		</array>
-		<key>UIViewControllerBasedStatusBarAppearance</key>
-		<false/>
-		<key>UIApplicationSceneManifest</key>
-		<dict>
-			<key>UISceneConfigurations</key>
-			<dict/>
-		</dict>
 	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We do not disclose your location information to others.</string>
+	<key>NSMotionUsageDescription</key>
+	<string>We ask for motion only to measure the number of steps.</string>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UISceneConfigurations</key>
+		<dict/>
+	</dict>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen.storyboard</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+</dict>
 </plist>
