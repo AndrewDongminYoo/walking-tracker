@@ -67,19 +67,6 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 /**
- * The preferred build flavor of JavaScriptCore (JSC)
- *
- * For example, to use the international variant, you can use:
- * `def jscFlavor = 'org.webkit:android-jsc-intl:+'`
- *
- * The international variant includes ICU i18n library and necessary data
- * allowing to use e.g. `Date.toLocaleString` and `String.localeCompare` that
- * give correct results when using with locales other than en-US. Note that
- * this variant is about 6MiB larger per architecture than default.
- */
-def jscFlavor = 'org.webkit:android-jsc:+'
-
-/**
  * Private function to get the list of Native Architectures you want to build.
  * This reads the value from reactNativeArchitectures in your gradle.properties
  * file and works together with the --active-arch-only flag of react-native run-android.
@@ -90,7 +77,7 @@ def reactNativeArchitectures() {
 }
 
 android {
-    ndkVersion rootProject.ext.ndkVersion
+    ndkVersion "23.1.7779620"
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
@@ -99,8 +86,8 @@ android {
         applicationId "com.walking_tracker"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 2
-        versionName "0.0.2"
+        versionCode 1
+        versionName "1.0"
     }
 
     splits {
@@ -155,20 +142,19 @@ android {
 
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
-    implementation("com.facebook.react:react-android")
-
+    implementation('com.facebook.react:react-android:0.71.3')
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 
     debugImplementation("com.facebook.flipper:flipper:$FLIPPER_VERSION")
     debugImplementation("com.facebook.flipper:flipper-network-plugin:$FLIPPER_VERSION") {
         exclude group: 'com.squareup.okhttp3', module: 'okhttp'
     }
-
     debugImplementation("com.facebook.flipper:flipper-fresco-plugin:$FLIPPER_VERSION")
+
     if (hermesEnabled.toBoolean()) {
-        implementation("com.facebook.react:hermes-android")
+        implementation 'com.facebook.react:hermes-android:+'
     } else {
-        implementation jscFlavor
+        implementation 'org.webkit:android-jsc-intl:+'
     }
 }
 
