@@ -1,7 +1,6 @@
 import {
   check,
   openSettings,
-  type Permission,
   type PermissionStatus,
   PERMISSIONS,
   request,
@@ -13,18 +12,21 @@ import appInformation from '../package.json';
 const bodySensor = PERMISSIONS.ANDROID.BODY_SENSORS_BACKGROUND;
 const activityRecognition = PERMISSIONS.ANDROID.ACTIVITY_RECOGNITION;
 const motion = PERMISSIONS.IOS.MOTION;
+type Permission =
+  | typeof bodySensor
+  | typeof activityRecognition
+  | typeof motion;
 
 const CHECK = <S = PermissionStatus>(result: S) => result === RESULTS.GRANTED;
 
+const permissionNames: Record<Permission, string> = {
+  [activityRecognition]: 'Activity Recognition',
+  [bodySensor]: 'Body Sensor',
+  [motion]: 'Motion',
+};
+
 const getRational = (permission: Permission): Rationale => {
-  let data = '';
-  if (permission === activityRecognition) {
-    data = 'Step Counter';
-  } else if (permission === bodySensor) {
-    data = 'Accelerometer';
-  } else if (permission === motion) {
-    data = 'Core Motion Pedometer';
-  }
+  const data = permissionNames[permission];
   const appName = appInformation.name;
   return {
     title: `"${data}" Permission`,
@@ -44,11 +46,8 @@ const checkPermission = async (permission: Permission) => {
 };
 
 export const getStepCounterPermission = async () => {
-  const permission: Permission =
-    Platform.OS === 'ios' ? motion : activityRecognition;
-  if (await requestPermission(permission)) {
-    return true;
-  }
+  const permission = Platform.OS === 'ios' ? motion : activityRecognition;
+  if (await requestPermission(permission)) return true;
   openSettings();
   return checkPermission(permission);
 };

@@ -4,8 +4,6 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android --mode Debug --port 8081",
-    "bundle:android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/",
-    "bundle:ios": "react-native bundle --platform ios --dev false --entry-file index.js --bundle-output ios/walking_tracker/index.ios.bundle --assets-dest ios/walking_tracker/Images.xcassets/",
     "clean": "del-cli android/build android/app/.cxx ios/build",
     "clear": "react-native clean --include watchman,yarn,metro,android",
     "doctor": "react-native doctor --fix",
@@ -13,10 +11,8 @@
     "lint": "eslint .",
     "patch": "patch-package",
     "pods": "(cd ios && pod install --no-repo-update)",
-    "postinstall": "(yarn patch && yarn pods && yarn doctor && yarn prepack)",
     "poststart": "watchman watch-del \"$PWD\" ; watchman watch-project \"$PWD\"",
     "preandroid": "(cd android && ./gradlew clean && ./gradlew installDebug)",
-    "prepack": "yarn bundle:android && yarn bundle:ios",
     "start": "react-native start",
     "test": "jest",
     "typecheck": "tsc --noEmit"
