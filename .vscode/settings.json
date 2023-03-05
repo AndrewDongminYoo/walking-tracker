@@ -26,5 +26,21 @@
     "array",
     "string"
   ],
-  "conventionalCommits.scopes": ["android", "ios", "react-bridge"]
+  "conventionalCommits.scopes": ["android", "ios", "react-bridge"],
+  "cSpell.words": [
+    "androiddebugkey",
+    "androidx",
+    "armeabi",
+    "buildscript",
+    "classpath",
+    "codegen",
+    "debuggable",
+    "hermesc",
+    "okhttp",
+    "poststart",
+    "preandroid",
+    "proguard",
+    "squareup",
+    "swiperefreshlayout"
+  ]
 }
