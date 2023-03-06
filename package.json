@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android --mode Debug --port 8081",
+    "build-ios": "react-native run-ios --configuration Release --scheme walking_tracker --port 8081",
     "clean": "del-cli android/build android/app/.cxx ios/build",
     "clear": "react-native clean --include watchman,yarn,metro,android",
     "doctor": "react-native doctor --fix",
-    "ios": "react-native run-ios --device --port 8081",
+    "ios": "react-native run-ios --device \"Dongmin's iPhone\" --configuration Debug --port 8081",
     "lint": "eslint .",
     "patch": "patch-package",
     "pods": "(cd ios && pod install --no-repo-update)",
@@ -18,18 +19,18 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@dongminyu/react-native-step-counter": "0.1.5",
+    "@dongminyu/react-native-step-counter": "0.1.7",
     "react": "18.2.0",
     "react-native": "0.71.3",
     "react-native-permissions": "^3.7.3"
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
-    "@babel/preset-env": "^7.20.0",
+    "@babel/preset-env": "^7.20.2",
     "@babel/runtime": "^7.21.0",
-    "@react-native-community/eslint-config": "^3.0.0",
-    "@tsconfig/react-native": "^2.0.2",
-    "@types/jest": "^29.2.1",
+    "@react-native-community/eslint-config": "^3.2.0",
+    "@tsconfig/react-native": "^2.0.3",
+    "@types/jest": "^29.4.0",
     "@types/react": "^18.0.28",
     "@types/react-test-renderer": "^18.0.0",
     "babel-jest": "^29.4.3",
