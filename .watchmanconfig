@@ -1,6 +1,12 @@
 {
-  "version": "2023.01.23.00",
+  "version": "2023.03.06.00",
   "fsevents_latency": 0.05,
-  "fsevents_try_resync": "true",
-  "prefer_split_fsevents_watcher": "true"
+  "fsevents_try_resync": true,
+  "gc_interval_seconds": 0,
+  "ignore_dirs": [
+    "android/app/build",
+    "ios/build"
+  ],
+  "prefer_split_fsevents_watcher": true,
+  "suppress_recrawl_warnings": true
 }

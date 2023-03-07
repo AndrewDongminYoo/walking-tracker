@@ -23,5 +23,6 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "ESNext"
-  }
+  },
+  "exclude": ["babel.config.js", "metro.config.js", "react-native.config.js"]
 }

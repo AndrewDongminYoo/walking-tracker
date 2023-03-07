@@ -78,16 +78,16 @@ def reactNativeArchitectures() {
 
 android {
     ndkVersion "23.1.7779620"
-
     compileSdkVersion rootProject.ext.compileSdkVersion
-
+    buildToolsVersion buildToolsVersion
     namespace "com.walking_tracker"
+
     defaultConfig {
         applicationId "com.walking_tracker"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "0.0.3"
     }
 
     splits {
@@ -98,6 +98,7 @@ android {
             include(*reactNativeArchitectures())
         }
     }
+
     signingConfigs {
         debug {
             storeFile file('debug.keystore')
@@ -110,6 +111,7 @@ android {
             keyAlias 'my-key-release'
         }
     }
+
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
@@ -123,6 +125,15 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    dependenciesInfo {
+        includeInApk true
+        includeInBundle true
+    }
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
@@ -146,6 +157,7 @@ dependencies {
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 
     debugImplementation("com.facebook.flipper:flipper:$FLIPPER_VERSION")
+    //noinspection GradleDependency
     debugImplementation("com.facebook.flipper:flipper-network-plugin:$FLIPPER_VERSION") {
         exclude group: 'com.squareup.okhttp3', module: 'okhttp'
     }

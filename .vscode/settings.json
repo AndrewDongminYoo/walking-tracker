@@ -37,8 +37,11 @@
     "debuggable",
     "hermesc",
     "okhttp",
+    "postandroid",
+    "postios",
     "poststart",
     "preandroid",
+    "preios",
     "proguard",
     "squareup",
     "swiperefreshlayout"
