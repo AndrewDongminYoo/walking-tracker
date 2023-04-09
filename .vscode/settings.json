@@ -26,9 +26,16 @@
     "buildscript",
     "classpath",
     "codegen",
+    "commitlint",
+    "conventionalcommits",
+    "datasources",
     "debuggable",
     "hermesc",
+    "hmap",
+    "hprof",
     "okhttp",
+    "pbxuser",
+    "perspectivev",
     "postandroid",
     "postios",
     "poststart",
@@ -36,6 +43,9 @@
     "preios",
     "proguard",
     "squareup",
-    "swiperefreshlayout"
+    "swiperefreshlayout",
+    "xccheckout",
+    "xcuserdata",
+    "xcuserstate"
   ]
 }
