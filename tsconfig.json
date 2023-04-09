@@ -6,6 +6,9 @@
     "baseUrl": ".",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "importsNotUsedAsValues": "remove",
+    "isolatedModules": false,
     "jsx": "react-native",
     "lib": ["ES5", "ES6", "ESNext", "DOM", "DOM.Iterable"],
     "module": "esnext",
@@ -19,10 +22,13 @@
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "outDir": "./lib",
+    "preserveValueImports": false,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
     "target": "ESNext"
   },
-  "exclude": ["babel.config.js", "metro.config.js", "react-native.config.js"]
+  "exclude": ["babel.config.js", "metro.config.js", "react-native.config.js"],
+  "include": ["**/*.ts", "**/*.tsx"]
 }
