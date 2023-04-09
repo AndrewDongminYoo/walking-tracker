@@ -28,7 +28,8 @@
   },
   "packageManager": "yarn@1.22.19",
   "dependencies": {
-    "@dongminyu/react-native-step-counter": "0.1.9",
+    "@dongminyu/react-native-step-counter": "^0.1.14",
+    "@dongminyu/segway-ble-manager": "^0.1.3",
     "react": "18.2.0",
     "react-native": "^0.71.4",
     "react-native-permissions": "^3.7.3"
@@ -56,5 +57,9 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "reactNativePermissionsIOS": [
+    "Motion",
+    "Bluetooth"
+  ]
 }
