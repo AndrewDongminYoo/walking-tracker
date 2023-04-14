@@ -19,6 +19,15 @@
   },
   "xml.format.preserveSpace": ["key", "dict", "true", "false", "plist", "array", "string"],
   "conventionalCommits.scopes": ["react", "ios", "android", "docs", "tests"],
+  "cSpell.ignorePaths": [
+    "package-lock.json",
+    "node_modules",
+    "vscode-extension",
+    ".git/objects",
+    ".vscode",
+    ".vscode-insiders",
+    "*.lock"
+  ],
   "cSpell.words": [
     "androiddebugkey",
     "androidx",
@@ -30,6 +39,7 @@
     "conventionalcommits",
     "datasources",
     "debuggable",
+    "fluentui",
     "hermesc",
     "hmap",
     "hprof",
