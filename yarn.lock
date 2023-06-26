@@ -1242,10 +1242,10 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@dongminyu/react-native-step-counter@^0.1.14":
-  version "0.1.14"
-  resolved "https://registry.yarnpkg.com/@dongminyu/react-native-step-counter/-/react-native-step-counter-0.1.14.tgz#d3bbab6ffed1e7af5d84d1b97d68e08727d2082b"
-  integrity sha512-4CbpDFfUZw/AEhACEU2wqaF64Mnr+5KBs1owY4ddZ6dWgWrBlg50eXCOercPQ3dg5Xfk8oucPLPV6dP+n6EAWw==
+"@dongminyu/react-native-step-counter@^0.1.16":
+  version "0.1.16"
+  resolved "https://registry.yarnpkg.com/@dongminyu/react-native-step-counter/-/react-native-step-counter-0.1.16.tgz#0d4905f30cf505df97e1cebe09093287378e759b"
+  integrity sha512-y5OcHuRl1BZqSagBtzAeC/C7DUyQyPvdGa6TYHbJxuLBbNbB9bEgBvT+QjL+RP7KBB1uvXXmVPmXKe4QRxRVgg==
 
 "@dongminyu/segway-ble-manager@^0.1.3":
   version "0.1.3"
