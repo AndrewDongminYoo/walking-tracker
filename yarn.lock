@@ -1247,10 +1247,10 @@
   resolved "https://registry.yarnpkg.com/@dongminyu/react-native-step-counter/-/react-native-step-counter-0.1.16.tgz#0d4905f30cf505df97e1cebe09093287378e759b"
   integrity sha512-y5OcHuRl1BZqSagBtzAeC/C7DUyQyPvdGa6TYHbJxuLBbNbB9bEgBvT+QjL+RP7KBB1uvXXmVPmXKe4QRxRVgg==
 
-"@dongminyu/segway-ble-manager@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@dongminyu/segway-ble-manager/-/segway-ble-manager-0.1.3.tgz#bbdbd50ac4436ca8ac19048059f0cbfd805f0b5f"
-  integrity sha512-pra58VZZUq3cvwQUfyurELrM7lgZZPTVaYmRwjZJ52BhMl7aOvcCGSXXj8chcr8XbKm1JQWNLvjey+q9TA2J1Q==
+"@dongminyu/segway-ble-manager@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@dongminyu/segway-ble-manager/-/segway-ble-manager-0.2.0.tgz#0d59972104666c9542127eb38b73d9bffcf4e776"
+  integrity sha512-MiFSXaqpyxA9Zs+CRKQSu+9/cUiuKvsQqvMIf7j0KVm04mZjgDQ+ogi02EYCkFgNNWHgB+M/tui3n5ECQU7Ieg==
 
 "@egjs/hammerjs@^2.0.17":
   version "2.0.17"
