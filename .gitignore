@@ -31,33 +31,7 @@ ios/.xcode.env.local
 
 # Android/IntelliJ
 android/**/build/
-!src/**/build/
-
-.idea/
-.idea/caches/
-# .idea/libraries/
-# .idea/shelf/
-# .idea/workspace.xml
-# .idea/tasks.xml
-# .idea/.name
-# .idea/compiler.xml
-# .idea/copyright/profiles_settings.xml
-# .idea/encodings.xml
-# .idea/misc.xml
-# .idea/modules.xml
-# .idea/scopes/scope_settings.xml
-# .idea/dictionaries
-# .idea/vcs.xml
-# .idea/jsLibraryMappings.xml
-# .idea/datasources.xml
-# .idea/dataSources.ids
-# .idea/sqlDataSources.xml
-# .idea/dynamic.xml
-# .idea/uiDesigner.xml
-# .idea/assetWizardSettings.xml
-# .idea/gradle.xml
-# .idea/jarRepositories.xml
-# .idea/navEditor.xml
+.idea
 
 ### ReactNative.Gradle Stack ###
 .gradle
@@ -81,25 +55,15 @@ local.properties
 
 # NodeJS Installed Modules
 node_modules/
-jspm_packages/
-web_modules/
-bower_components/
 
 # Temporary files created by Metro to check the health of the file watcher
 npm-debug.log
 yarn-error.log
 yarn-debug.log
-lerna-debug.log
-.pnpm-debug.log
 
 # Yarn Installed Packages
 .yarn/*
 !.yarn/releases
-!.yarn/patches
-!.yarn/plugins
-!.yarn/sdks
-!.yarn/versions
-!.yarn/cache
 
 # fastlane
 #
@@ -120,11 +84,9 @@ index.*.bundle
 # Ruby / CocoaPods
 /ios/Pods/
 /vendor/bundle/
-!/ios/Pods/Manifest.lock
 
 # Temporary files created by Metro to check the health of the file watcher
 .metro-health-check*
-logs/**
 
-# Developer Time Tracking Tool
-.wakatime-project
+# testing
+/coverage
