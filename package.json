@@ -11,6 +11,7 @@
     "android": "react-native run-android",
     "clear": "react-native clean --include watchman,yarn,metro,android",
     "doctor": "react-native doctor --fix",
+    "preios": "react-native setup-ios-permissions",
     "ios": "react-native run-ios",
     "lint": "eslint . --ext .ts --ext .tsx --fix",
     "format": "prettier \"**/*.{ts,js,jsx,tsx}\" --check --write",
@@ -52,5 +53,8 @@
     "prettier": "^3.0.3",
     "react-test-renderer": "18.2.0",
     "typescript": "5.2.2"
-  }
+  },
+  "reactNativePermissionsIOS": [
+    "Motion"
+  ]
 }
