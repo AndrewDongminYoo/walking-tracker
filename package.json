@@ -32,7 +32,7 @@
     "react-native-circular-progress-indicator": "^4.4.2",
     "react-native-gesture-handler": "^2.13.4",
     "react-native-permissions": "^4.0.1",
-    "react-native-reanimated": "^3.5.4",
+    "react-native-reanimated": "^3.6.1",
     "react-native-svg": "^14.1.0"
   },
   "devDependencies": {

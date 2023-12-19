@@ -5930,10 +5930,10 @@ react-native-permissions@^4.0.1:
   resolved "https://registry.yarnpkg.com/react-native-permissions/-/react-native-permissions-4.0.1.tgz#9f9fe089a4a4740b7e4a75d7340f63d81016a2fc"
   integrity sha512-wiC+zsVbysV2/pvrwB6sawB3Uhs1xWSfUCxRBmg3vBi7uc9egxAJZcMovSQGTzTHRrY3Lo3hyD/zHJ4xQ+fnWw==
 
-react-native-reanimated@^3.5.4:
-  version "3.5.4"
-  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-3.5.4.tgz#a6c2b0c43b6dad246f5d276213974afedb8e3fc7"
-  integrity sha512-8we9LLDO1o4Oj9/DICeEJ2K1tjfqkJagqQUglxeUAkol/HcEJ6PGxIrpBcNryLqCDYEcu6FZWld/FzizBIw6bg==
+react-native-reanimated@^3.6.1:
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-3.6.1.tgz#5add41efafac6d0befd9786e752e7f26dbe903b7"
+  integrity sha512-F4vG9Yf9PKmE3GaWtVGUpzj3SM6YY2cx1yRHCwiMd1uY7W0gU017LfcVUorboJnj0y5QZqEriEK1Usq2Y8YZqg==
   dependencies:
     "@babel/plugin-transform-object-assign" "^7.16.7"
     "@babel/preset-typescript" "^7.16.7"
