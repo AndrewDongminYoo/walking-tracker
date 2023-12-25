@@ -28,7 +28,7 @@
   "dependencies": {
     "@dongminyu/react-native-step-counter": "^0.2.3",
     "react": "18.2.0",
-    "react-native": "^0.72.7",
+    "react-native": "^0.72.8",
     "react-native-circular-progress-indicator": "^4.4.2",
     "react-native-gesture-handler": "^2.13.4",
     "react-native-permissions": "^4.0.1",
