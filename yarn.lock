@@ -6442,10 +6442,10 @@ react-native-redash@*:
     normalize-svg-path "^1.0.1"
     parse-svg-path "^0.1.2"
 
-react-native-svg@^15.0.0:
-  version "15.0.0"
-  resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-15.0.0.tgz#3c700a33e97de6305e0fdc61dc036fc6b1bdaef2"
-  integrity sha512-ZUEXlzdU3cHjhOuc4BP7fbvabmz8yIuH4ocKSEr5V3P5skk2wnbEyZd3p7dzV9IoODgguCe7tcrNRGwr9pLRig==
+react-native-svg@^15.3.0:
+  version "15.3.0"
+  resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-15.3.0.tgz#e24b833fe330714c99f1dd894bb0da52ad859a4c"
+  integrity sha512-mBHu/fdlzUbpGX8SZFxgbKvK/sgqLfDLP8uh8G7Us+zJgdjO8OSEeqHQs+kPRdQmdLJQiqPJX2WXgCl7ToTWqw==
   dependencies:
     css-select "^5.1.0"
     css-tree "^1.1.3"
