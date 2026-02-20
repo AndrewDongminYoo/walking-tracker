@@ -9,60 +9,44 @@
   },
   "scripts": {
     "android": "react-native run-android",
-    "clear": "react-native clean --include watchman,yarn,metro,android",
-    "doctor": "react-native doctor --fix",
-    "preios": "react-native setup-ios-permissions",
     "ios": "react-native run-ios",
-    "lint": "eslint . --ext .ts --ext .tsx --fix",
-    "format": "prettier \"**/*.{ts,js,jsx,tsx}\" --check --write",
-    "start": "react-native start --reset-cache",
-    "test": "jest",
-    "typecheck": "tsc --noEmit",
-    "unwatch": "watchman watch-del \"$PWD\"; watchman watch-project \"$PWD\"",
-    "watch": "tsc --noEmit --watch"
+    "lint": "eslint .",
+    "start": "react-native start",
+    "test": "jest"
   },
-  "engines": {
-    "node": ">=16"
-  },
-  "packageManager": "yarn@1.22.19",
   "dependencies": {
-    "@dongminyu/react-native-step-counter": "^0.2.5",
-    "react": "18.2.0",
-    "react-native": "^0.72.12",
+    "@dongminyu/react-native-step-counter": "^0.3.0",
+    "@react-native/new-app-screen": "0.84.0",
+    "react": "^19.2.4",
+    "react-native": "^0.84.0",
     "react-native-circular-progress-indicator": "^4.4.2",
-    "react-native-gesture-handler": "^2.15.0",
-    "react-native-permissions": "^4.1.1",
-    "react-native-reanimated": "^3.8.1",
-    "react-native-svg": "^15.3.0"
+    "react-native-permissions": "^5.4.4",
+    "react-native-reanimated": "^4.2.2",
+    "react-native-safe-area-context": "^5.6.2",
+    "react-native-svg": "^15.15.3",
+    "react-native-worklets": "^0.7.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.9",
-    "@babel/preset-env": "^7.23.9",
-    "@babel/runtime": "^7.23.9",
-    "@react-native/eslint-config": "^0.74.76",
-    "@react-native/eslint-plugin": "^0.74.0",
-    "@react-native/metro-config": "^0.74.75",
-    "@tsconfig/react-native": "^3.0.3",
-    "@types/react": "^18.2.52",
-    "@types/react-test-renderer": "^18.0.7",
-    "babel-jest": "^29.2.1",
-    "eslint": "^8.56.0",
-    "jest": "^29.2.1",
-    "metro-react-native-babel-preset": "^0.77.0",
-    "pod-install": "^0.2.0",
-    "prettier": "^3.2.5",
-    "react-test-renderer": "18.2.0",
-    "typescript": "5.3.3"
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/runtime": "^7.25.0",
+    "@react-native-community/cli": "20.1.0",
+    "@react-native-community/cli-platform-android": "20.1.0",
+    "@react-native-community/cli-platform-ios": "20.1.0",
+    "@react-native/babel-preset": "0.84.0",
+    "@react-native/eslint-config": "0.84.0",
+    "@react-native/metro-config": "0.84.0",
+    "@react-native/typescript-config": "0.84.0",
+    "@types/jest": "^29.5.13",
+    "@types/react": "^19.2.0",
+    "@types/react-test-renderer": "^19.1.0",
+    "eslint": "^8.19.0",
+    "jest": "^29.6.3",
+    "prettier": "2.8.8",
+    "react-test-renderer": "19.2.3",
+    "typescript": "^5.8.3"
   },
-  "resolutions": {
-    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0-0",
-    "@babel/plugin-proposal-optional-chaining": "^7.0.0-0",
-    "@babel/plugin-transform-arrow-functions": "^7.0.0-0",
-    "@babel/plugin-transform-shorthand-properties": "^7.0.0-0",
-    "@babel/plugin-transform-template-literals": "^7.0.0-0",
-    "uglify-es": "npm:uglify-js"
-  },
-  "reactNativePermissionsIOS": [
-    "Motion"
-  ]
+  "engines": {
+    "node": ">= 22.11.0"
+  }
 }

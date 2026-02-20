@@ -1,10 +1,10 @@
-### macOS ###
+# OSX
 #
 .DS_Store
 
 # Xcode
 #
-ios/**/build/
+build/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -17,53 +17,29 @@ xcuserdata
 *.xccheckout
 *.moved-aside
 DerivedData
-
-## Obj-C/Swift specific
 *.hmap
-
-## App packaging
 *.ipa
-*.dSYM.zip
-*.dSYM
-
 *.xcuserstate
-ios/.xcode.env.local
+**/.xcode.env.local
 
 # Android/IntelliJ
-android/**/build/
+#
+build/
 .idea
-
-### ReactNative.Gradle Stack ###
 .gradle
 local.properties
 *.iml
-
-# Android Profiling
 *.hprof
-
-# Android Studio generated files and folders
 .cxx/
-
-# Built application files
-*.ap_
-*.aab
-*.apk
-
-# Android Keystore files
 *.keystore
 !debug.keystore
+.kotlin/
 
-# NodeJS Installed Modules
+# node.js
+#
 node_modules/
-
-# Temporary files created by Metro to check the health of the file watcher
 npm-debug.log
 yarn-error.log
-yarn-debug.log
-
-# Yarn Installed Packages
-.yarn/*
-!.yarn/releases
 
 # fastlane
 #
@@ -79,10 +55,9 @@ yarn-debug.log
 
 # Bundle artifact
 *.jsbundle
-index.*.bundle
 
 # Ruby / CocoaPods
-/ios/Pods/
+**/Pods/
 /vendor/bundle/
 
 # Temporary files created by Metro to check the health of the file watcher
@@ -90,3 +65,11 @@ index.*.bundle
 
 # testing
 /coverage
+
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
