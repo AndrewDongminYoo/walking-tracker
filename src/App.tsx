@@ -15,8 +15,8 @@ import LogCat from './LogCat';
 type SensorType<T = typeof Platform.OS> = T extends 'ios'
   ? 'CMPedometer'
   : T extends 'android'
-  ? 'Step Counter' | 'Accelerometer'
-  : 'NONE';
+    ? 'Step Counter' | 'Accelerometer'
+    : 'NONE';
 
 type SensorName = SensorType<Platform['OS']>;
 

@@ -6,11 +6,11 @@
 version: 2
 updates:
   - package-ecosystem: npm # See documentation for possible values
-    directory: "/" # Location of package manifests
+    directory: / # Location of package manifests
     schedule:
-      interval: "weekly"
+      interval: weekly
     allow:
       # Allow updates Main Dependency (Mine)
-      - dependency-name: "@dongminyu/*"
+      - dependency-name: '@dongminyu/*'
       # Allow updates for React and any packages starting "react"
-      - dependency-name: "*react-native*"
+      - dependency-name: '*react-native*'
