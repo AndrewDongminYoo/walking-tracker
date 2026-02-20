@@ -1,0 +1,12 @@
+version: '0.2'
+allowCompoundWords: true
+ignorePaths: []
+dictionaryDefinitions:
+  - name: walking-tracker
+    path: ./.cspell/walking-tracker.txt
+    addWords: true
+dictionaries:
+  - walking-tracker
+words: []
+ignoreWords: []
+import: []
