@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@dongminyu/react-native-step-counter": "^0.3.0",
-    "react": "^19.2.3",
+    "react": "19.2.3",
     "react-native": "^0.84.0",
     "react-native-circular-progress-indicator": "^4.4.2",
     "react-native-permissions": "^5.4.4",
