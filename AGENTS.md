@@ -1,53 +1,74 @@
 # Repository Guidelines
 
-## Project Structure & Module Organization
+## Overview
 
-Core app code lives in `src/`:
+- React Native 0.84 step-counter demo app.
+- Core behavior: permission gating + native step subscription + log rendering.
+- Primary package under test: `@dongminyu/react-native-step-counter`.
 
-- `src/App.tsx`: root screen and step-counter lifecycle.
-- `src/LogCat.tsx`: log viewer UI.
-- `src/permission.ts`: platform permission helpers.
+## Structure Tree
 
-App entry is `index.js`. Unit/UI tests live in `__tests__/` and native-module test doubles in `__mocks__/`. Native platform projects are under `android/` and `ios/`.
+```text
+.
+├── src/                  # App logic, UI, permission helpers
+├── __tests__/            # Jest + Testing Library behavior tests
+├── __mocks__/            # Native-package test doubles
+├── android/              # Android host app + Gradle config
+├── ios/                  # iOS host app + CocoaPods/Xcode config
+├── index.js              # RN entrypoint (AppRegistry)
+├── jest.config.js        # test env + moduleNameMapper for mocks
+├── eslint.config.cjs     # ESLint 9-compatible RN flat config patching
+└── .trunk/trunk.yaml     # format/lint/security toolchain config
+```
 
-## Build, Test, and Development Commands
+## AGENTS Hierarchy
 
-- `yarn start`: start Metro (`--reset-cache` is already configured).
-- `yarn android`: build/run on Android emulator or device.
-- `yarn ios`: build/run on iOS simulator or device.
-- `yarn lint`: run ESLint using `@react-native/eslint-config`.
-- `yarn test`: run all Jest tests.
-- `yarn test __tests__/App.test.tsx`: run a single test file.
-- `bundle exec pod install`: refresh iOS pods after native dependency changes.
-- `trunk check` / `trunk fmt`: optional full lint/format pass used by local hooks.
+- `AGENTS.md` (this file): cross-repo map and rules.
+- `src/AGENTS.md`: JS/TS architecture and state-flow invariants.
+- `__tests__/AGENTS.md`: testing patterns and guardrails.
+- `__mocks__/AGENTS.md`: mock-shape and determinism rules.
+- `android/AGENTS.md`: Android-specific build/runtime guidance.
+- `ios/AGENTS.md`: iOS-specific build/runtime guidance.
 
-Use Node `>=22.11.0` as defined in `package.json`.
+## Where To Look First
 
-## Coding Style & Naming Conventions
+- Runtime state bugs: `src/App.tsx`.
+- Log rendering/formatting issues: `src/LogCat.tsx`.
+- Permission behavior: `src/permission.ts`, `__mocks__/react-native-permissions.ts`.
+- Failing component tests: `__tests__/`.
+- Native boot/build failures: `android/` or `ios/` by platform.
 
-Use TypeScript + functional React components with hooks. Formatting is enforced by Prettier (`singleQuote: true`, `trailingComma: all`, `arrowParens: avoid`); default 2-space indentation. Follow ESLint rules from `@react-native`.
+## Code Map (High Signal)
 
-Naming patterns:
+- `App` owns start/stop/restart lifecycle and native subscription.
+- `LogCat` is presentational and session-filtered.
+- `permission.ts` encapsulates platform-specific permission request/check flow.
+- Jest maps native modules to local mocks in `jest.config.js`.
 
-- Components/types: `PascalCase` (`LogCat`, `StepCountData`).
-- Variables/functions/hooks: `camelCase` (`startStepCounter`, `useEffect` state handlers).
-- Tests: `<Module>.test.tsx`.
-- Mocks: mirror package names in `__mocks__/` (for example `react-native-permissions.ts`).
+## Conventions
 
-## Testing Guidelines
+- TypeScript + function components + hooks.
+- Formatting: Prettier (`singleQuote`, `trailingComma`, `arrowParens: avoid`).
+- Lint: `eslint.config.cjs` extends RN flat config with plugin compatibility patches.
+- Naming: `PascalCase` components/types, `camelCase` values/functions.
+- Commits: conventional type + gitmoji (`feat: ✨ ...`, `refactor: ♻️ ...`).
 
-Testing uses Jest (`preset: react-native`) and `@testing-library/react-native`. Add or update tests when changing UI state flow, permission handling, or native event wiring. When introducing a new native dependency, add a mock in `__mocks__/` and map it in `jest.config.js`.
+## Anti-Patterns
 
-No coverage threshold is enforced, but each behavior change should include targeted tests and pass `yarn test` + `yarn lint`.
+- Duplicating step subscription ownership outside `App`.
+- Editing generated/vendor trees (`ios/Pods`, `android/build`, `android/.gradle`).
+- Adding native deps without matching Jest mock + mapper entry.
+- Copying root guidance into child AGENTS files verbatim.
 
-## Commit & Pull Request Guidelines
+## Commands
 
-Follow the existing history style: Conventional Commits with gitmoji when possible, e.g. `feat: ✨ add restart guard` or `refactor: ♻️ simplify permission flow`.
+- `yarn start` / `yarn android` / `yarn ios`
+- `yarn lint`
+- `yarn test` or `yarn test __tests__/App.test.tsx`
+- `bundle exec pod install` (after native dependency changes)
+- `trunk fmt` / `trunk check`
 
-For PRs, include:
+## Notes
 
-- clear summary of what changed and why,
-- linked issue (if applicable),
-- test evidence (`yarn test`, `yarn lint`),
-- screenshots/video for UI changes,
-- notes for Android/iOS permission or native config updates.
+- Node runtime requirement: `>=22.11.0`.
+- Keep docs telegraphic and repository-specific.
