@@ -63,6 +63,7 @@ jsonify
 jvmargs
 keyv
 kleur
+ktlint
 legacyviewmanagerinterop
 levn
 marky
