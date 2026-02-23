@@ -14,6 +14,7 @@ CDPATH
 cdpmetrics
 claide
 cliui
+cmfj
 colorette
 corejs
 cosmiconfig
@@ -39,6 +40,7 @@ fastq
 fdir
 fsevents
 getprototypeof
+GHSA
 gitmoji
 gopd
 graphemer
@@ -108,6 +110,7 @@ ungap
 universalify
 unpipe
 unscopables
+Vulns
 wcwidth
 whatwg
 wrappy
