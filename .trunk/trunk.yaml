@@ -18,7 +18,7 @@ lint:
     - trufflehog@3.93.4
     - markdownlint@0.47.0
     - dotenv-linter@4.0.0
-    - eslint@10.0.0
+    - eslint@9.39.3
     - git-diff-check
     - gitleaks@8.29.0
     - prettier@3.8.1
