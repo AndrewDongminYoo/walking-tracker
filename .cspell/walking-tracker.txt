@@ -74,6 +74,7 @@ nanaimo
 netrc
 nicolo
 nocache
+omnisharp
 optimise
 oscompat
 performancecdpmetrics
@@ -84,6 +85,7 @@ RCTFB
 regexpu
 regjsgen
 regjsparser
+rego
 reusify
 rexml
 ribaudo
