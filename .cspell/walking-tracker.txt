@@ -39,6 +39,7 @@ fastq
 fdir
 fsevents
 getprototypeof
+gitmoji
 gopd
 graphemer
 hapi
