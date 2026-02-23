@@ -10,6 +10,10 @@ lint:
   ignore:
     - linters: [osv-scanner]
       paths: ['**/Podfile.lock']
+    - linters: [shellcheck]
+      paths: [android/gradlew]
+    - linters: [yamllint]
+      paths: [.serena/project.yml]
   enabled:
     - ktlint@1.8.0
     - swiftlint@0.63.2

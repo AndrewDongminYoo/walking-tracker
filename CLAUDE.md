@@ -35,7 +35,7 @@ This is a React Native 0.84 step-counter demo app using `@dongminyu/react-native
 
 ### Source layout
 
-```
+```log
 src/
   App.tsx         # Root component — owns all state and native subscriptions
   LogCat.tsx      # Pure log-viewer component (no subscriptions)
