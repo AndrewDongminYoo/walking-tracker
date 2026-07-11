@@ -5,7 +5,9 @@ ruby ">= 2.6.10"
 
 # Exclude problematic versions of cocoapods and activesupport that causes build failures.
 gem 'cocoapods', '>= 1.13', '!= 1.15.0', '!= 1.15.1'
-gem 'activesupport', '>= 6.1.7.5', '!= 7.1.0'
+# Lower bound raised to 7.2.3.1 for the GHSA-2j26/89vf security patches; stays
+# < 8 via cocoapods' own activesupport constraint.
+gem 'activesupport', '>= 7.2.3.1', '!= 7.1.0'
 gem 'xcodeproj', '< 1.26.0'
 gem 'concurrent-ruby', '< 1.3.4'
 
