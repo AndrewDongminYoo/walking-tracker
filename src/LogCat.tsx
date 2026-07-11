@@ -128,9 +128,10 @@ const LogCat = ({
         </View>
       </View>
 
+      {/* NOTE: consider migrating to a virtualized FlatList if visibleLines can grow large. */}
       <ScrollView ref={scrollRef} style={styles.logArea}>
         {visibleLines.map((line, index) => (
-          <Text key={`${line.ts}-${index}`} style={styles.log}>
+          <Text key={`${line.ts}-${index}`} style={styles.log} testID="logcat-line">
             {formatLogLine(line)}
           </Text>
         ))}

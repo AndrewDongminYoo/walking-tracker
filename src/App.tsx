@@ -29,6 +29,11 @@ const initialState: StepCountData = {
   distance: 0,
 };
 
+// Upper bound on retained log lines. The native step callback appends one line
+// per emitted step; without a cap the array grows unbounded during a walking
+// session (memory + non-virtualized render cost climb until reset).
+const MAX_LOGS = 200;
+
 function newSessionId() {
   // small + deterministic enough for demo
   return `${Date.now()}-${Math.random().toString(16).slice(2)}`;
@@ -57,6 +62,10 @@ export default function App(): React.JSX.Element {
   // Avoid state race in RESTART/START
   const startedRef = React.useRef(false);
 
+  // Guards async flows (RESTART) that resume after the component unmounts, so we
+  // don't assign a native subscription that the unmount cleanup can never remove.
+  const mountedRef = React.useRef(true);
+
   const appendLog = React.useCallback(
     (tag: string, payload: unknown, sid?: string) => {
       const line: LogLine = {
@@ -65,7 +74,10 @@ export default function App(): React.JSX.Element {
         tag,
         payload: JSON.stringify(payload),
       };
-      setLogs(prev => [...prev, line]);
+      setLogs(prev => {
+        const next = [...prev, line];
+        return next.length > MAX_LOGS ? next.slice(-MAX_LOGS) : next;
+      });
     },
     [],
   );
@@ -119,16 +131,9 @@ export default function App(): React.JSX.Element {
       setStepData(data);
       setCalories(parseStepData(data).calories);
 
-      // Log the raw event we get from wrapper callback (single source of truth)
-      setLogs(prev => [
-        ...prev,
-        {
-          sessionId: nextSessionId,
-          ts: Date.now(),
-          tag: 'stepCounterUpdate',
-          payload: JSON.stringify(data),
-        },
-      ]);
+      // Log the raw event we get from wrapper callback (single source of truth).
+      // Route through the bounded appendLog so this high-frequency path is capped.
+      appendLog('stepCounterUpdate', data, nextSessionId);
     });
   }, [appendLog, clearLogs]);
 
@@ -144,11 +149,13 @@ export default function App(): React.JSX.Element {
       supported: false,
       granted: false,
     }));
+    if (!mountedRef.current) return;
     appendLog('capabilities', cap);
 
     // If not granted, request permission (platform-specific branching stays yours)
     if (cap.supported && !cap.granted) {
       const ok = await getStepCounterPermission().catch(() => false);
+      if (!mountedRef.current) return;
       setGranted(ok);
       appendLog('permission', { ok });
       if (!ok) {
@@ -165,6 +172,9 @@ export default function App(): React.JSX.Element {
 
   React.useEffect(() => {
     let cancelled = false;
+    // Re-arm on every mount so StrictMode's mount→cleanup→mount cycle doesn't
+    // leave the ref stuck false after the first cleanup runs.
+    mountedRef.current = true;
 
     isStepCountingSupported().then(result => {
       if (cancelled) return;
@@ -175,6 +185,7 @@ export default function App(): React.JSX.Element {
 
     return () => {
       cancelled = true;
+      mountedRef.current = false;
       stopStepCounter();
     };
     // run once

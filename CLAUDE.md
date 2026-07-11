@@ -50,8 +50,10 @@ __mocks__/        # Manual mocks for all native-only packages
 
 - **Single subscription owner**: `startStepCounterUpdate` is called exactly once in `startStepCounter`. `LogCat` is a pure renderer; it receives `logs` as a prop and never subscribes to native events itself.
 - **`startedRef` guard**: prevents double-starts caused by async state updates during RESTART flows.
+- **`mountedRef` guard**: the RESTART flow re-checks capability/permission after an `await`. `mountedRef` blocks assigning a native subscription once the component has unmounted (the unmount cleanup could never remove it). It is re-armed on every mount so StrictMode's mount→cleanup→mount cycle doesn't leave it stuck `false`.
 - **`sessionIdRef`**: because `sessionId` is React state, it would be stale inside the native subscription closure. A ref mirrors the current value so log lines can be tagged with the correct session without stale closure issues.
 - **Session boundary**: each `startStepCounter()` call generates a new `sessionId`. `LogCat` filters `logs` by `sessionId`, so stale entries from a previous session are invisible even if not yet cleared.
+- **Bounded log buffer** (`MAX_LOGS = 200`): the native step callback appends one log line per emitted step. `appendLog` caps the retained array so it cannot grow unbounded during a sustained session; `LogCat` renders lines in a `ScrollView`, so the cap also bounds render cost. Covered by the "caps the rendered log buffer" test in `__tests__/App.test.tsx`.
 
 ### Permission model (`src/permission.ts`)
 

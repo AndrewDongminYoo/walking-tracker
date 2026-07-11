@@ -76,4 +76,30 @@ describe('App', () => {
     expect(screen.getByRole('button', { name: 'START' })).not.toBeDisabled();
     expect(screen.getByRole('button', { name: 'STOP' })).toBeDisabled();
   });
+
+  it('caps the rendered log buffer during a sustained session', async () => {
+    mockSupported.mockResolvedValue({ supported: true, granted: true });
+    render(<App />);
+    await act(async () => {});
+
+    // Grab the native step callback registered by startStepCounter.
+    const onStep = mockStart.mock.calls[0][1] as (data: unknown) => void;
+
+    // Emit far more steps than the buffer cap (MAX_LOGS = 200).
+    await act(async () => {
+      for (let i = 0; i < 250; i++) {
+        onStep({
+          counterType: 'test',
+          steps: i,
+          startDate: 0,
+          endDate: 0,
+          distance: i,
+        });
+      }
+    });
+
+    // The most recent 200 entries are all stepCounterUpdate lines, so the buffer
+    // is bounded even though 250 steps were emitted.
+    expect(screen.getAllByTestId('logcat-line').length).toBe(200);
+  });
 });
