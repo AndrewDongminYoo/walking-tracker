@@ -11,7 +11,7 @@
 - `__tests__/`: Jest tests for app components and behavior.
 - `__mocks__/`: manual mocks for native-only dependencies used by tests.
 - `android/`, `ios/`: native project files.
-- Root configs: `package.json`, `jest.config.js`, `eslint.config.js`, `.prettierrc.js`, `.trunk/trunk.yaml`, `tsconfig.json`.
+- Root configs: `package.json`, `jest.config.js`, `eslint.config.cjs`, `.prettierrc.js`, `.trunk/trunk.yaml`, `tsconfig.json`.
 
 ## Key implementation notes
 

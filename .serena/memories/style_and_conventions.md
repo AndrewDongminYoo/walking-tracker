@@ -11,7 +11,7 @@
   - `singleQuote: true`
   - `trailingComma: all`
   - `arrowParens: avoid`
-- ESLint config (`eslint.config.js`) extends `@react-native/eslint-config/flat`.
+- ESLint config (`eslint.config.cjs`) extends `@react-native/eslint-config/flat`.
 - Trunk is configured for pre-commit format and pre-push checks.
 
 ## Naming
