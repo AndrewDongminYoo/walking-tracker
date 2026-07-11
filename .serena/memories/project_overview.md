@@ -1,7 +1,7 @@
 # Project Overview
 
 - **Purpose**: React Native step-counter demo app (walking tracker) that showcases native step tracking integration via `@dongminyu/react-native-step-counter`.
-- **Primary stack**: React Native 0.84, React 19, TypeScript, Jest, React Native Testing Library.
+- **Primary stack**: React Native 0.86, React 19, TypeScript, Jest, React Native Testing Library.
 - **Native targets**: Android (`android/`) and iOS (`ios/`).
 - **Entry points**: `index.js` registers the app; main app logic is in `src/App.tsx`.
 

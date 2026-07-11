@@ -31,7 +31,7 @@ Node >= 22.11.0 is required.
 
 ## Architecture
 
-This is a React Native 0.84 step-counter demo app using `@dongminyu/react-native-step-counter` (the author's own native module).
+This is a React Native 0.86 step-counter demo app using `@dongminyu/react-native-step-counter` (the author's own native module).
 
 ### Source layout
 

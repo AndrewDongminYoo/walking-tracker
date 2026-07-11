@@ -2,7 +2,7 @@
 
 ## Overview
 
-- React Native 0.84 step-counter demo app.
+- React Native 0.86 step-counter demo app.
 - Core behavior: permission gating + native step subscription + log rendering.
 - Primary package under test: `@dongminyu/react-native-step-counter`.
 
