@@ -31,7 +31,7 @@ lint:
     # peerDependencies.eslint "^8.0.0 || ^9.0.0", and eslint-plugin-react
     # crashes under eslint 10 ("contextOrFilename.getFilename is not a
     # function" in detectReactVersion, reproduced locally).
-    - eslint@9.39.5
+    - eslint@10.8.0
     - git-diff-check
     - gitleaks@8.29.0
     - prettier@3.9.6

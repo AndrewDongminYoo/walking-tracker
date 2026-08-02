@@ -242,7 +242,6 @@ export default function App(): React.JSX.Element {
               title="Step Count"
               titleColor="#555"
               titleFontSize={30}
-              // eslint-disable-next-line react-native/no-inline-styles
               titleStyle={{ fontWeight: 'bold' }}
             />
           </View>
