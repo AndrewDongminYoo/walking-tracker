@@ -4,7 +4,7 @@ cli:
 plugins:
   sources:
     - id: trunk
-      ref: v1.7.4
+      ref: v1.11.0
       uri: https://github.com/trunk-io/plugins
 lint:
   ignore:
@@ -15,20 +15,26 @@ lint:
     - linters: [yamllint]
       paths: [.serena/project.yml]
   enabled:
+    - grype@0.110.0
+    - taplo@0.10.0
     - ktlint@1.8.0
     - swiftlint@0.63.2
     - oxipng@10.1.0
-    - shfmt@3.6.0
-    - checkov@3.2.505
+    - shfmt@3.13.1
+    - checkov@3.3.8
     - osv-scanner@2.3.3
-    - trivy@0.69.1
+    - trivy@0.70.0
     - trufflehog@3.93.4
-    - markdownlint@0.47.0
+    - markdownlint@0.49.1
     - dotenv-linter@4.0.0
-    - eslint@9.39.3
+    # eslint held at 9.x: @react-native/eslint-config@0.86.0 declares
+    # peerDependencies.eslint "^8.0.0 || ^9.0.0", and eslint-plugin-react
+    # crashes under eslint 10 ("contextOrFilename.getFilename is not a
+    # function" in detectReactVersion, reproduced locally).
+    - eslint@9.39.5
     - git-diff-check
     - gitleaks@8.29.0
-    - prettier@3.8.1
+    - prettier@3.9.6
     - shellcheck@0.11.0
     - yamllint@1.38.0
 runtimes:
@@ -36,7 +42,7 @@ runtimes:
     - java@13.0.11
     - go@1.21.0
     - node@22.16.0
-    - python@3.10.8
+    - python@3.14.4
 actions:
   enabled:
     - trunk-announce

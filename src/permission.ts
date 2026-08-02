@@ -19,9 +19,7 @@ const bodySensor = PERMISSIONS.ANDROID.BODY_SENSORS_BACKGROUND;
 const activityRecognition = PERMISSIONS.ANDROID.ACTIVITY_RECOGNITION;
 const motion = PERMISSIONS.IOS.MOTION;
 type Permission =
-  | typeof bodySensor
-  | typeof activityRecognition
-  | typeof motion;
+  typeof bodySensor | typeof activityRecognition | typeof motion;
 
 /**
  * @description This function checks the result and returns true if the permission is granted
