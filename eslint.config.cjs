@@ -20,13 +20,30 @@ const eslintCommentsPlugin = require('@eslint-community/eslint-plugin-eslint-com
 //    react/* rules working.
 //
 // 4. eslint-plugin-react-native@5.0.0 (latest; unmaintained since 2024-12, peer caps at
-//    eslint ^9) loads 'no-inline-styles' via context.getSourceCode(), also removed in
-//    ESLint 10. That is the only react-native/* rule this config enables, so it is turned
-//    off rather than dropping the plugin. Re-enable if the plugin ever ships ESLint 10
-//    support.
+//    eslint ^9) loads its rules via context.getSourceCode(), also removed in ESLint 10,
+//    so every rule it provides is unusable. 'no-inline-styles' is the only react-native/*
+//    rule this config enables, so drop the plugin entirely rather than carry a dead
+//    override. '@react-native/*' rules come from @react-native/eslint-plugin, a different
+//    package — those stay.
+
+const dropReactNativePlugin = ({ plugins, rules, ...block }) => {
+  if (plugins) {
+    const { 'react-native': _dropped, ...kept } = plugins;
+    block.plugins = kept;
+  }
+  if (rules) {
+    block.rules = Object.fromEntries(
+      Object.entries(rules).filter(
+        ([name]) => !name.startsWith('react-native/'),
+      ),
+    );
+  }
+  return block;
+};
 
 module.exports = reactNativeConfig
   .filter(config => !config.plugins?.['ft-flow'])
+  .map(dropReactNativePlugin)
   .map(config => {
     if (!config.plugins?.['eslint-comments']) {
       return config;
@@ -55,9 +72,4 @@ module.exports = reactNativeConfig
       rules: fixedRules,
     };
   })
-  .concat([
-    {
-      settings: { react: { version: '19.2' } },
-      rules: { 'react-native/no-inline-styles': 'off' },
-    },
-  ]);
+  .concat([{ settings: { react: { version: '19.2' } } }]);
