@@ -12,8 +12,6 @@ lint:
       paths: ['**/Podfile.lock']
     - linters: [shellcheck]
       paths: [android/gradlew]
-    - linters: [yamllint]
-      paths: [.serena/project.yml]
   enabled:
     - grype@0.110.0
     - taplo@0.10.0
