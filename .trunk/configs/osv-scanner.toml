@@ -1,19 +1,14 @@
-# concurrent-ruby is a transitive dependency of activesupport, pulled in only by
-# the CocoaPods build toolchain (Gemfile / Gemfile.lock) — it is never shipped in
-# the app bundle. All three advisories below are patched in concurrent-ruby 1.3.7,
-# but the Gemfile pins `concurrent-ruby < 1.3.4` to avoid a known CocoaPods build
-# regression. Relaxing that pin requires verifying `bundle exec pod install` on
-# iOS, so these stay ignored until the pin can be lifted safely.
-# Re-evaluate: 2026-07-11.
+# OSV Scanner configuration for walking-tracker
+# Last updated: 2026-08-20
+
+# image-size <= 2.0.2 vulnerabilities (GHSA-w3rx-r6r6-pgpr, GHSA-5p2g-fcmc-qvqq)
+# No patch available as of 2026-08-20. Transitive dependency of metro (dev-only).
+# Re-evaluate when a fix is released.
 
 [[IgnoredVulns]]
-id = "GHSA-h8w8-99g7-qmvj"
-reason = "concurrent-ruby AtomicReference#update livelock; patched in 1.3.7 but blocked by Gemfile pin `concurrent-ruby < 1.3.4`. Dev-only CocoaPods tooling, not in app bundle. As of 2026-07-11."
+id = "GHSA-w3rx-r6r6-pgpr"
+reason = "image-size <= 2.0.2 Denial of Service; no patch available as of 2026-08-20. Transitive dependency of metro (dev-only), not in app bundle. Re-evaluate when a fix is released."
 
 [[IgnoredVulns]]
-id = "GHSA-6wx8-w4f5-wwcr"
-reason = "concurrent-ruby ReadWriteLock wrong-thread release; patched in 1.3.7 but blocked by Gemfile pin `concurrent-ruby < 1.3.4`. Dev-only CocoaPods tooling, not in app bundle. As of 2026-07-11."
-
-[[IgnoredVulns]]
-id = "GHSA-wv3x-4vxv-whpp"
-reason = "concurrent-ruby ReentrantReadWriteLock read-count overflow; patched in 1.3.7 but blocked by Gemfile pin `concurrent-ruby < 1.3.4`. Dev-only CocoaPods tooling, not in app bundle. As of 2026-07-11."
+id = "GHSA-5p2g-fcmc-qvqq"
+reason = "image-size <= 2.0.2 Denial of Service; no patch available as of 2026-08-20. Transitive dependency of metro (dev-only), not in app bundle. Re-evaluate when a fix is released."
