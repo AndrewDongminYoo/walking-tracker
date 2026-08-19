@@ -1,5 +1,5 @@
 version: '0.2'
-allowCompoundWords: true
+allowCompoundWords: false
 ignorePaths: []
 dictionaryDefinitions:
   - name: walking-tracker
