@@ -1,7 +1,7 @@
 process.env.TZ = 'UTC';
 const jestConfig = require('jest-config');
 module.exports = {
-  preset: 'react-native',
+  preset: '@react-native/jest-preset',
   // other Jest configuration options...
   moduleFileExtensions: [...jestConfig.defaults.moduleFileExtensions, 'mts'],
   modulePathIgnorePatterns: ['<rootDir>/node_modules', '<rootDir>/lib/'],
