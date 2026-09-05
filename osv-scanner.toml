@@ -1,0 +1,13 @@
+# osv-scanner suppressions (run via trunk; see .trunk/trunk.yaml → osv-scanner).
+#
+# walking_tracker is an application, not a published package, so a transitive
+# dependency of the bundler never reaches a user. Entries here are advisories
+# with no released fix; anything patchable is fixed in package.json instead.
+
+[[IgnoredVulns]]
+id = "GHSA-5p2g-fcmc-qvqq"
+reason = "image-size@1.2.1 — transitive, build-only (metro@0.84.4 declares image-size ^1.0.2), never bundled into the app. No patch available as of 2026-09-05; the advisory covers <= 2.0.2 with no fixed version released. Re-evaluate when image-size publishes a fix."
+
+[[IgnoredVulns]]
+id = "GHSA-w3rx-r6r6-pgpr"
+reason = "image-size@1.2.1 — transitive, build-only (metro@0.84.4 declares image-size ^1.0.2), never bundled into the app. No patch available as of 2026-09-05; the advisory covers <= 2.0.2 with no fixed version released. Re-evaluate when image-size publishes a fix."
