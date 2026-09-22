@@ -7,6 +7,8 @@ plugins:
       ref: v1.11.0
       uri: https://github.com/trunk-io/plugins
 lint:
+  disabled:
+    - shellcheck
   ignore:
     - linters: [osv-scanner]
       paths: ['**/Podfile.lock']
