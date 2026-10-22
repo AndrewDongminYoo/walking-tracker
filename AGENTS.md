@@ -65,10 +65,10 @@
 - `yarn start` / `yarn android` / `yarn ios`
 - `yarn lint`
 - `yarn test` or `yarn test __tests__/App.test.tsx`
-- `bundle exec pod install` (after native dependency changes)
+- `bundle exec pod install --project-directory=ios` (from the repository root after native dependency changes)
 - `trunk fmt` / `trunk check`
 
 ## Notes
 
-- Node runtime requirement: `>=22.11.0`.
+- Root manifest declares Node `>=22.11.0`; React Native 0.88 requires `^22.13.0 || ^24.3.0 || >=26.0.0`.
 - Keep docs telegraphic and repository-specific.

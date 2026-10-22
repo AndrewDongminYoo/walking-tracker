@@ -22,12 +22,13 @@ yarn test
 yarn test __tests__/App.test.tsx
 
 # iOS: install/update CocoaPods (after native dep changes)
-bundle exec pod install
+bundle exec pod install --project-directory=ios
 ```
 
 **Trunk** is configured as a pre-commit formatter and pre-push linter. Run `trunk check` or `trunk fmt` manually if needed. Trunk manages ESLint, Prettier, ktlint, swiftlint, and security scanners (gitleaks, trufflehog).
 
-Node >= 22.11.0 is required.
+The root manifest declares Node >= 22.11.0.
+React Native 0.88 requires Node `^22.13.0 || ^24.3.0 || >=26.0.0`.
 
 ## Architecture
 
@@ -43,7 +44,7 @@ src/
 
 index.js          # AppRegistry entry point → App.tsx
 __tests__/        # Jest + @testing-library/react-native tests
-__mocks__/        # Manual mocks for all native-only packages
+__mocks__/        # Shared manual mocks for native-only packages
 ```
 
 ### Key design decisions in `App.tsx`
@@ -66,7 +67,8 @@ __mocks__/        # Manual mocks for all native-only packages
 
 ### Testing
 
-All native packages are mocked under `__mocks__/`. When adding a new native dependency, add a corresponding mock file and register it in `jest.config.js` under `moduleNameMapper`.
+Shared native package mocks live under `__mocks__/`.
+When adding a shared native mock, register it in `jest.config.js` under `moduleNameMapper`.
 
 `react-native-step-counter-newarch` is mocked inline per test file using `jest.mock(...)` rather than via a file in `__mocks__/`, because different tests need different return values from `isStepCountingSupported`.
 
