@@ -4,7 +4,7 @@ import App from '../src/App';
 
 // ─── mocks ──────────────────────────────────────────────────────────────────
 
-jest.mock('@dongminyu/react-native-step-counter', () => ({
+jest.mock('react-native-step-counter-newarch', () => ({
   isStepCountingSupported: jest.fn(),
   startStepCounterUpdate: jest.fn(),
   stopStepCounterUpdate: jest.fn(),
@@ -29,7 +29,7 @@ import {
   isStepCountingSupported,
   startStepCounterUpdate,
   stopStepCounterUpdate,
-} from '@dongminyu/react-native-step-counter';
+} from 'react-native-step-counter-newarch';
 
 const mockSupported = isStepCountingSupported as jest.Mock;
 const mockStart = startStepCounterUpdate as jest.Mock;

@@ -14,7 +14,7 @@ import {
   startStepCounterUpdate,
   stopStepCounterUpdate,
   type StepCountData,
-} from '@dongminyu/react-native-step-counter';
+} from 'react-native-step-counter-newarch';
 import { getStepCounterPermission } from './permission';
 import CircularProgress, {
   type ProgressRef,
@@ -22,7 +22,7 @@ import CircularProgress, {
 import LogCat, { type LogLine } from './LogCat';
 
 const initialState: StepCountData = {
-  counterType: '',
+  counterType: 'STEP_COUNTER',
   steps: 0,
   startDate: 0,
   endDate: 0,
