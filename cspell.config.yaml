@@ -1,11 +1,29 @@
 version: '0.2'
 allowCompoundWords: false
-ignorePaths: []
+useGitignore: true
+enableGlobDot: true
+ignorePaths:
+  - .git
+  - android/gradlew
+  - android/gradlew.bat
+  - ios/Podfile.lock
 dictionaryDefinitions:
   - name: walking-tracker
     path: ./.cspell/walking-tracker.txt
     addWords: true
 dictionaries:
+  - node
+  - npm
+  - typescript
+  - swift
+  - java
+  - kotlin
+  - ruby
+  - ruby-gems
+  - shellscript
+  - softwareTerms
+  - filetypes
+  - fonts
   - walking-tracker
 words: []
 ignoreWords: []
