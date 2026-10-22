@@ -1,0 +1,7 @@
+[[IgnoredVulns]]
+id = "GHSA-vfj7-8cjw-p6xm"
+reason = "braces@3.0.3 has no published patch as of 2026-10-22. Evidence: yarn why braces resolves the Jest transform/micromatch dependency; micromatch exposes brace expansion, so repository/test patterns must remain trusted. Approved by Dongmin Yu on 2026-10-22 for this tooling-only use. Re-evaluation owner: Dongmin Yu; remove when a compatible patch is available or untrusted pattern inputs are introduced."
+
+[[IgnoredVulns]]
+id = "GHSA-hp3w-g68c-fv3c"
+reason = "sprintf-js@1.0.3 has no published patch as of 2026-10-22. Evidence: yarn why sprintf-js resolves load-nyc-config -> js-yaml -> argparse; sprintf is used by argparse CLI help/error formatting. Loading YAML through require('js-yaml').load does not load argparse or sprintf-js, as checked with require.cache. Approved by Dongmin Yu on 2026-10-22 for trusted tooling inputs. Re-evaluation owner: Dongmin Yu; remove when a compatible patch is available or untrusted format inputs are introduced."
