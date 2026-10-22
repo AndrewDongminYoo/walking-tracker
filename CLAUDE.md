@@ -31,7 +31,7 @@ Node >= 22.11.0 is required.
 
 ## Architecture
 
-This is a React Native 0.86 step-counter demo app using `@dongminyu/react-native-step-counter` (the author's own native module).
+This is a React Native 0.88 step-counter demo app using `react-native-step-counter-newarch` (the author's own native module).
 
 ### Source layout
 
@@ -68,6 +68,6 @@ __mocks__/        # Manual mocks for all native-only packages
 
 All native packages are mocked under `__mocks__/`. When adding a new native dependency, add a corresponding mock file and register it in `jest.config.js` under `moduleNameMapper`.
 
-`@dongminyu/react-native-step-counter` is mocked inline per test file using `jest.mock(...)` rather than via a file in `__mocks__/`, because different tests need different return values from `isStepCountingSupported`.
+`react-native-step-counter-newarch` is mocked inline per test file using `jest.mock(...)` rather than via a file in `__mocks__/`, because different tests need different return values from `isStepCountingSupported`.
 
 `process.env.TZ = 'UTC'` is set in `jest.config.js` to make timestamp assertions deterministic.

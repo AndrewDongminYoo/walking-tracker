@@ -23,7 +23,7 @@ __tests__/
 ## Conventions
 
 - Use `@testing-library/react-native` (`render`, `screen`, `fireEvent`, `act`).
-- Mock `@dongminyu/react-native-step-counter` inline when test-specific return values are needed.
+- Mock `react-native-step-counter-newarch` inline when test-specific return values are needed.
 - Keep tests deterministic; rely on `process.env.TZ = 'UTC'` from `jest.config.js`.
 - Name tests by user-visible behavior ("shows...", "enables...", "calls...").
 

@@ -69,11 +69,13 @@ kleur
 ktlint
 legacyviewmanagerinterop
 levn
+logcat
 marky
 mkdirp
 molinillo
 nanaimo
 netrc
+newarch
 nicolo
 nocache
 omnisharp
@@ -113,6 +115,7 @@ unscopables
 Vulns
 wcwidth
 whatwg
+worklets
 wrappy
 xccheckout
 xcodeproj
