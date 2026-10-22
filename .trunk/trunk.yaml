@@ -7,7 +7,15 @@ plugins:
       ref: v1.11.0
       uri: https://github.com/trunk-io/plugins
 lint:
+  definitions:
+    - name: gitleaks
+      commands:
+        - name: lint
+          # Explicit config is required when Trunk scans a copied target file.
+          run: gitleaks detect --no-git --source=${target} --config=${workspace}/.gitleaks.toml --redact --exit-code=101 -f sarif -r "${tmpfile}"
   disabled:
+    - grype
+    - dotenv-linter
     - shellcheck
   ignore:
     - linters: [osv-scanner]
@@ -15,26 +23,23 @@ lint:
     - linters: [shellcheck]
       paths: [android/gradlew]
   enabled:
-    - grype@0.110.0
+    - pinact@4.0.0:
+        commands: [lint, upgrade]
+    - actionlint@1.7.8
     - taplo@0.10.0
     - ktlint@1.8.0
     - swiftlint@0.63.2
     - oxipng@10.1.0
     - shfmt@3.13.1
-    - checkov@3.3.8
+    - checkov@3.3.30
     - osv-scanner@2.3.3
     - trivy@0.70.0
     - trufflehog@3.93.4
     - markdownlint@0.49.1
-    - dotenv-linter@4.0.0
-    # eslint held at 9.x: @react-native/eslint-config@0.86.0 declares
-    # peerDependencies.eslint "^8.0.0 || ^9.0.0", and eslint-plugin-react
-    # crashes under eslint 10 ("contextOrFilename.getFilename is not a
-    # function" in detectReactVersion, reproduced locally).
-    - eslint@10.8.0
+    - eslint@10.13.0
     - git-diff-check
     - gitleaks@8.29.0
-    - prettier@3.9.6
+    - prettier@3.9.10
     - yamllint@1.38.0
 runtimes:
   enabled:

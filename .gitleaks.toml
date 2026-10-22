@@ -1,0 +1,12 @@
+[extend]
+useDefault = true
+
+[[rules]]
+id = "generic-api-key"
+
+[[rules.allowlists]]
+description = "CocoaPods-generated React-cxxstableapi spec checksum"
+condition = "AND"
+paths = ['''(^|/)ios/Podfile\.lock$''']
+regexTarget = "line"
+regexes = ['''(?m)^[ \t]*React-cxxstableapi: [0-9a-f]{40}[ \t]*$''']
