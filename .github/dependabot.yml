@@ -24,7 +24,20 @@ updates:
       interval: weekly
       day: monday
       timezone: Asia/Seoul
-    open-pull-requests-limit: 3
+    open-pull-requests-limit: 2
+    ignore:
+      # The React Native version is chosen by the upgrade path, not by Dependabot.
+      # update-types limits this to version updates; security updates still open.
+      - dependency-name: react-native
+        update-types:
+          - version-update:semver-patch
+          - version-update:semver-minor
+          - version-update:semver-major
+      - dependency-name: '@react-native/*'
+        update-types:
+          - version-update:semver-patch
+          - version-update:semver-minor
+          - version-update:semver-major
     groups:
       npm-minor-patch:
         patterns:
@@ -42,7 +55,49 @@ updates:
       interval: weekly
       day: monday
       timezone: Asia/Seoul
-    open-pull-requests-limit: 3
+    open-pull-requests-limit: 2
+    ignore:
+      # The Android Gradle Plugin follows the Flutter or React Native toolchain, not Dependabot.
+      # update-types limits this to version updates; security updates still open.
+      - dependency-name: com.android.application
+        update-types:
+          - version-update:semver-patch
+          - version-update:semver-minor
+          - version-update:semver-major
+      - dependency-name: com.android.library
+        update-types:
+          - version-update:semver-patch
+          - version-update:semver-minor
+          - version-update:semver-major
+      # The Kotlin Gradle plugin and its stdlib must match the framework's bundled Kotlin.
+      - dependency-name: org.jetbrains.kotlin.android
+        update-types:
+          - version-update:semver-patch
+          - version-update:semver-minor
+          - version-update:semver-major
+      - dependency-name: org.jetbrains.kotlin:kotlin-stdlib
+        update-types:
+          - version-update:semver-patch
+          - version-update:semver-minor
+          - version-update:semver-major
+      # The wrapper follows the same toolchain: Gradle 9.8.1 ships Kotlin 2.4
+      # metadata that the React Native 0.88 gradle-plugin (Kotlin 2.2.0) cannot read.
+      - dependency-name: gradle-wrapper
+        update-types:
+          - version-update:semver-patch
+          - version-update:semver-minor
+          - version-update:semver-major
+      # The same two plugins, declared as classpath coordinates.
+      - dependency-name: com.android.tools.build:gradle
+        update-types:
+          - version-update:semver-patch
+          - version-update:semver-minor
+          - version-update:semver-major
+      - dependency-name: org.jetbrains.kotlin:kotlin-gradle-plugin
+        update-types:
+          - version-update:semver-patch
+          - version-update:semver-minor
+          - version-update:semver-major
     groups:
       gradle-minor-patch:
         patterns:
@@ -60,7 +115,7 @@ updates:
       interval: weekly
       day: monday
       timezone: Asia/Seoul
-    open-pull-requests-limit: 3
+    open-pull-requests-limit: 2
     groups:
       bundler-minor-patch:
         patterns:
