@@ -1,10 +1,110 @@
 # Autoformatter friendly markdownlint config (all formatting rules disabled)
-default: true
-blank_lines: false
-bullet: false
-html: false
-indentation: false
-line_length: false
-spaces: false
-url: false
-whitespace: false
+# Disables rules that may conflict with Prettier
+
+# heading-increment - Heading levels should only increment by one level at a time
+#MD001: false
+# heading-style - Heading style
+MD003: false
+# ul-style - Unordered list style
+#MD004: false
+# list-indent - Inconsistent indentation for list items at the same level
+MD005: false
+# ul-indent - Unordered list indentation
+MD007: false
+# no-trailing-spaces - Trailing spaces
+MD009: false
+# no-hard-tabs - Hard tabs
+MD010: false
+# no-reversed-links - Reversed link syntax
+#MD011: false
+# no-multiple-blanks - Multiple consecutive blank lines
+MD012: false
+# line-length - Line length
+MD013: false
+# commands-show-output - Dollar signs used before commands without showing output
+#MD014: false
+# no-missing-space-atx - No space after hash on atx style heading
+MD018: false
+# no-multiple-space-atx - Multiple spaces after hash on atx style heading
+MD019: false
+# no-missing-space-closed-atx - No space inside hashes on closed atx style heading
+MD020: false
+# no-multiple-space-closed-atx - Multiple spaces inside hashes on closed atx style heading
+MD021: false
+# blanks-around-headings - Headings should be surrounded by blank lines
+MD022: false
+# heading-start-left - Headings must start at the beginning of the line
+MD023: false
+# no-duplicate-heading - Multiple headings with the same content
+#MD024: false
+# single-title/single-h1 - Multiple top-level headings in the same document
+#MD025: false
+# no-trailing-punctuation - Trailing punctuation in heading
+#MD026: false
+# no-multiple-space-blockquote - Multiple spaces after blockquote symbol
+MD027: false
+# no-blanks-blockquote - Blank line inside blockquote
+MD028: false
+# ol-prefix - Ordered list item prefix
+MD029: false
+# list-marker-space - Spaces after list markers
+MD030: false
+# blanks-around-fences - Fenced code blocks should be surrounded by blank lines
+MD031: false
+# blanks-around-lists - Lists should be surrounded by blank lines
+MD032: false
+# no-inline-html - Inline HTML
+MD033: false
+# no-bare-urls - Bare URL used
+#MD034: false
+# hr-style - Horizontal rule style
+MD035: false
+# no-emphasis-as-heading - Emphasis used instead of a heading
+#MD036: false
+# no-space-in-emphasis - Spaces inside emphasis markers
+#MD037: false
+# no-space-in-code - Spaces inside code span elements
+#MD038: false
+# no-space-in-links - Spaces inside link text
+#MD039: false
+# fenced-code-language - Fenced code blocks should have a language specified
+#MD040: false
+# first-line-heading/first-line-h1 - First line in a file should be a top-level heading
+#MD041: false
+# no-empty-links - No empty links
+#MD042: false
+# required-headings - Required heading structure
+#MD043: false
+# proper-names - Proper names should have the correct capitalization
+#MD044: false
+# no-alt-text - Images should have alternate text (alt text)
+#MD045: false
+# code-block-style - Code block style
+#MD046: false
+# single-trailing-newline - Files should end with a single newline character
+#MD047: false
+# code-fence-style - Code fence style
+MD048: false
+# emphasis-style - Emphasis style
+MD049: false
+# strong-style - Strong style
+MD050: false
+# link-fragments - Link fragments should be valid
+#MD051: false
+# reference-links-images - Reference links and images should use a label that is defined
+#MD052: false
+# link-image-reference-definitions - Link and image reference definitions should be needed
+#MD053: false
+# link-image-style - Link and image style
+#MD054: false
+# table-pipe-style - Table pipe style
+#MD055: false
+# table-column-count - Table column count
+#MD056: false
+# blanks-around-tables - Tables should be surrounded by blank lines
+#MD058: false
+# descriptive-link-text - Link text should be descriptive
+#MD059: false
+# table-column-style - Table column style
+#MD060: false
+
