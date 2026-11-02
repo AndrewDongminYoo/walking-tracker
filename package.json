@@ -32,9 +32,9 @@
     "react-native-worklets": "^0.13.1"
   },
   "devDependencies": {
-    "@babel/core": "^8.0.9",
+    "@babel/core": "^8.0.10",
     "@babel/preset-env": "^8.0.7",
-    "@babel/runtime": "^8.0.8",
+    "@babel/runtime": "^8.0.10",
     "@eslint-community/eslint-plugin-eslint-comments": "^4.7.2",
     "@react-native-community/cli": "20.2.0",
     "@react-native-community/cli-platform-android": "20.2.0",
