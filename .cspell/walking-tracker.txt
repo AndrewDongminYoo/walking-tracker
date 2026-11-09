@@ -124,6 +124,7 @@ performancecdpmetrics
 perspectivev
 picocolors
 picomatch
+pinact
 Podfile
 Pressable
 proguard

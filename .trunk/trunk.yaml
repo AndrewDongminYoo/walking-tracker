@@ -1,6 +1,6 @@
 version: 0.1
 cli:
-  version: 1.25.0
+  version: 1.29.0
 plugins:
   sources:
     - id: trunk
@@ -13,6 +13,10 @@ lint:
         - name: lint
           # Explicit config is required when Trunk scans a copied target file.
           run: gitleaks detect --no-git --source=${target} --config=${workspace}/.gitleaks.toml --redact --exit-code=101 -f sarif -r "${tmpfile}"
+    - name: pinact
+      commands:
+        - name: upgrade
+          enabled: true
   disabled:
     - dotenv-linter
     - grype
@@ -22,22 +26,21 @@ lint:
     - linters: [osv-scanner]
       paths: ['**/Podfile.lock']
   enabled:
-    - actionlint@1.7.8
-    - checkov@3.3.30
-    - eslint@10.13.0
+    - actionlint@1.7.12
+    - checkov@3.4.3
+    - eslint@10.14.0
     - git-diff-check
-    - gitleaks@8.29.0
+    - gitleaks@8.30.1
     - ktlint@1.8.0
     - markdownlint@0.50.0
-    - osv-scanner@2.3.3
-    - oxipng@10.1.0
-    - pinact@4.1.1!:
-        commands: [lint, upgrade]
+    - osv-scanner@2.7.0
+    - oxipng@10.2.1
+    - pinact@4.1.1!
     - prettier@3.9.10
-    - swiftlint@0.63.2
+    - swiftlint@0.65.1
     - taplo@0.10.0
-    - trivy@0.70.0
-    - trufflehog@3.93.4
+    - trivy@0.76.2
+    - trufflehog@3.99.8
     - yamllint@1.38.0
 runtimes:
   enabled:
