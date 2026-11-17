@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "brace-expansion": "^5.0.8",
+    "fast-xml-parser": "^5.10.1",
     "qs": "^6.17.1",
     "react": "19.3.1",
     "react-native": "^0.88.1",
