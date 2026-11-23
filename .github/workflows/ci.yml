@@ -26,3 +26,23 @@ jobs:
       - run: npm exec --yes --package=yarn@1.22.22 -- yarn install --frozen-lockfile
       - run: npm exec --yes --package=yarn@1.22.22 -- yarn lint
       - run: npm exec --yes --package=yarn@1.22.22 -- yarn test --ci --runInBand
+
+  # Native modules such as react-native-reanimated check their peers only in a native build.
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24.20.0
+      - run: npm exec --yes --package=yarn@1.22.22 -- yarn install --frozen-lockfile
+      - uses: actions/setup-java@d1374f8ac74474200d16ef8ecee22c7ae7a51880 # v6.3.0
+        with:
+          distribution: zulu
+          java-version: '17'
+          cache: gradle
+      - run: ./gradlew assembleDebug --no-daemon --console=plain -PreactNativeArchitectures=arm64-v8a
+        working-directory: android
