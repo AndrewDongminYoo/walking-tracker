@@ -6529,10 +6529,10 @@ react-native-permissions@^5.6.0:
   resolved "https://registry.yarnpkg.com/react-native-permissions/-/react-native-permissions-5.6.3.tgz#f30d23c79364293b969c5e0fcce5c0b79c5904ac"
   integrity sha512-jCl5TCbRsgBr3kgJdLmdyLa+QMW/jiTjKdQqXGrm7x1XMUwKlumnQWx1BRRcIv7eclnLN1NZud3KVaCkp8+wHA==
 
-react-native-reanimated@^4.5.1:
-  version "4.7.2"
-  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-4.7.2.tgz#60d590505fa7c862f774d7b8c320928455b61733"
-  integrity sha512-dlPMG+dKKbcumR8k2C8wApqVsrCevINxEki3I6t0S/6LPqa639unbwRn85yu1yhtC9oJI94xk+ycdGuEGdH4Gw==
+react-native-reanimated@^4.8.0:
+  version "4.8.0"
+  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-4.8.0.tgz#ebffcb6e9c73d0d006846198161d12259f4dadfd"
+  integrity sha512-emcLwcnEl6Xwg2op8VPyONeZm75Y5FD2sPaOJtF7EbGn/IJVbas0Yq4VQRsl1tZgo9oI9qeqIkPzU9gAgAGQFQ==
   dependencies:
     react-native-is-edge-to-edge "^1.3.1"
     semver "^7.7.3"
@@ -6564,10 +6564,10 @@ react-native-svg@^15.16.1:
     css-select "^5.1.0"
     css-tree "^1.1.3"
 
-react-native-worklets@^0.13.1:
-  version "0.13.1"
-  resolved "https://registry.yarnpkg.com/react-native-worklets/-/react-native-worklets-0.13.1.tgz#a981b9cd1429f709b7093ff13e5020a87fa02d97"
-  integrity sha512-sX55Vx89/Y9uJmvAbAGoHXBZvCWXtYPGWPJ9Z9yl0h76mP9A10ULlSrixzGqBFLXeQMBpIpyJEhWpzXP7GG6YA==
+react-native-worklets@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/react-native-worklets/-/react-native-worklets-0.14.0.tgz#be8259367ed57a18053391727ca025157b306c11"
+  integrity sha512-FAMNVHF8ClJmC61V+2jDOCUDjaZPnda+PBK5QqMkGtn13D3itDkkJxrFb0pCSnIfRTuIS/muE338usqEcRbuSg==
   dependencies:
     "@babel/generator" "^7.27.1"
     "@babel/plugin-transform-arrow-functions" "^7.27.1"
